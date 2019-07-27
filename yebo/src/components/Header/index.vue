@@ -1,0 +1,30 @@
+<template>
+        <div id="header">
+            <p>{{title}}</p>
+        </div>
+</template>
+
+<script>
+    export default {
+        name:'Header',
+        props:{
+            title:{
+                default:'yebo电影'
+            }
+        }
+    }
+</script>
+
+<style scoped>
+#header{
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background: #ff0036;
+    line-height: 50px;
+    text-align: center;
+}
+#header p{
+    font-size: 18px;
+}
+</style>
