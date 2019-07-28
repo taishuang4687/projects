@@ -34,10 +34,15 @@ thead, tbody, tfoot, th, td {
 #content{
   flex: 1;
   overflow: auto;
-  margin-bottom: 1rem;
+  /* margin-bottom: 50px; */
   position: relative;
   display: flex;
   flex-direction: column;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
 }
 /**
 * 非大面积文字排版网站通常不需要列表项，如果需要可单独设置

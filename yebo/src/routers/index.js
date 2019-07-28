@@ -11,6 +11,11 @@ export default new Router({
   routes: [
     movie,
     cinema,
-    mine
+    mine,
+    {
+      // 错误路径时，重定向到movie路径
+      path:'/*',
+      redirect:'/movie'
+    }
   ]
 })

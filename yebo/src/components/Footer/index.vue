@@ -2,15 +2,15 @@
         <div id="footer">
             <ul>
                 <router-link tag='li' to='/movie'>
-                    <i class="iconfont icon-shouji01"></i>
+                    <i class="iconfont icon-sousuo"></i>
                     <p>电影</p>
                 </router-link>
                 <router-link tag='li' to='/cinema'>
-                    <i class='iconfont icon-gouwuchekong'></i>
+                    <i class='iconfont icon-sousuo'></i>
                     <p>影院</p>
                 </router-link>
                 <router-link tag='li' to='/mine'>
-                    <i class="iconfont icon-daohang"></i>
+                    <i class="iconfont icon-sousuo"></i>
                     <p>我的</p>
                 </router-link>
             </ul>

@@ -23,6 +23,8 @@
     background: #ff0036;
     line-height: 50px;
     text-align: center;
+    position: fixed;
+    top: 0;
 }
 #header p{
     font-size: 18px;
