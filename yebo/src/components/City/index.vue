@@ -67,7 +67,56 @@
 
 <script>
     export default {
-        name:'City'
+        name:'City',
+        mounted(){
+            this.axios.get('/api/cityList').then((res)=>{
+                //判断数据是否返回成功
+                // console.log(res);
+                var msg = res.data.msg;
+                if(msg === 'ok'){
+                    var cities = res.data.data.cities;
+                    this.formatCitiList(cities);
+                }
+            });
+        },
+        methods:{
+            formatCitiList(cities){
+                var cityList = [];//城市列表
+                var hotList = [];//热门城市列表
+                for(var i=0;i<cities.length;i++){
+                    var firstLetter = cities[i].py.substring(0,1).toUpperCase();//转成大写
+                    if(compare(firstLetter)){
+                        cityList.push({index:firstLetter,list:[{nm:cities[i].nm,id:cities[i].id}]});
+                    }else{
+                        for(var j=0;j<cityList.length;j++){
+                            if(cityList[j].index===firstLetter){
+                                cityList[j].list.push({nm:cities[i].nm,id:cities[i].id});
+                            }
+                        }
+                    }
+                }
+                cityList.sort((n1,n2)=>{
+                    if(n1.index > n2.index){
+                        return 1;
+                    }else if(n1.index < n2.index){
+                        return -1;
+                    }else{
+                        return 0;
+                    }
+                })
+                function compare(firstLetter){
+                    //进行首字母开头比较
+                    for(var i=0;i<cityList.length;i++){
+                        if(cityList[i].index===firstLetter){
+                            return false;
+                        }
+                        
+                    }
+                    return true;
+                }
+                console.log(cityList);
+            }
+        }
     }
 </script>
 

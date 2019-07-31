@@ -12,12 +12,12 @@
                 <li>
                     <div class="img">
                         <img src="../../../public/imgs/ktv_music.jpg" alt=""/>
-                        <div class="text">
-                            <p><span>无名之辈</span><span>8.0</span></p>
-                            <p>a cool fish</p>
-                            <p>喜剧</p>
-                            <p>2018-11-02</p>
-                        </div>
+                    </div>
+                    <div class="text">
+                        <p><span>无名之辈</span><span>8.0</span></p>
+                        <p>a cool fish</p>
+                        <p>喜剧</p>
+                        <p>2018-11-02</p>
                     </div>
                 </li>
             </ul>
@@ -83,6 +83,7 @@
 }
 .search-content .search-return .img img{
     width: 100%;
+    height: 85px;
 }
 .search-content .search-return .text{
     float: left;
