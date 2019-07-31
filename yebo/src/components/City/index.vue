@@ -134,6 +134,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border-left: 1px solid #000;
+    border-left: 1px solid #999;
 }
 </style>

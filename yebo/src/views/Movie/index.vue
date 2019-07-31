@@ -46,6 +46,8 @@ import Footer from '@/components/Footer';
     text-align: center;
     position: fixed;
     top: 50px;
+    z-index: 1;
+    background: #fff;
 }
 #content .city-name{
     height: 100%;

@@ -15,6 +15,104 @@
                     预定
                 </div>
             </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
+            <li>
+                <div class="img-show">
+                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                </div>
+                <div class="info-list">
+                    <h2>无名之辈</h2>
+                    <p>评分:<span class='grade'>9.0</span></p>
+                    <p>主演：陈建兵</p>
+                    <p>共放映600场</p>
+                </div>
+                <div class="buy-ticket">
+                    预定
+                </div>
+            </li>
         </ul>
     </div>
 </template>
