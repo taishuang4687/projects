@@ -1,126 +1,14 @@
 <template>
     <div class='cinema-content'>
         <ul>
-            <li>
+            <li v-for='item in cinemaList' :key='item.id'>
                 <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
+                    <span>{{item.nm}}</span>
+                    <span class='q'><span class='price'>{{item.sellPrice}}</span>元起</span>
                 </div>
                 <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <span>大地影院</span>
-                    <span class='q'><span class='price'>30</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>哈尔滨市南岗区学府路94号</span>
-                    <span>123km</span>
+                    <span>{{item.addr}}</span>
+                    <span>{{item.distance}}</span>
                 </div>
                 <div class="card">
                     <div class='one'>退</div>
@@ -133,7 +21,21 @@
 
 <script>
     export default {
-        name:'CinemaPart'
+        data(){
+            return {
+                cinemaList : []
+            }
+        },
+        name:'CinemaPart',
+        mounted(){
+            this.axios.get('/api/cinemaList?cityId=10').then((res)=>{
+                var msg = res.data.msg;
+                // console.log(res);
+                if(msg==='ok'){
+                    this.cinemaList = res.data.data.cinemas;
+                }
+            })
+        }
     }
 </script>
 
@@ -163,6 +65,9 @@
 .cinema-content .address{
     font-style: 13px;
     color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .cinema-content .address span:nth-of-type(2){
     float: right;

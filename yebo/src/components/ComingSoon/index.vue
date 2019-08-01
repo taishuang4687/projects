@@ -9,7 +9,7 @@
                     <h2>{{item.nm}}</h2>
                     <p>评分:<span class='grade'>{{item.sc}}</span></p>
                     <p>主演：{{item.star}}</p>
-                    <p>{{item.showInfo}}</p>
+                    <p>{{item.rt}}即将上映</p>
                 </div>
                 <div class="buy-ticket">
                     预定
