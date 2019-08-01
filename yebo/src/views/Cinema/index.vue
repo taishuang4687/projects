@@ -14,7 +14,9 @@
                  </div>
              </div>
          </div>
-         <CinemaPart></CinemaPart>
+         <div class="middle">
+            <CinemaPart></CinemaPart>
+         </div>
          <Footer></Footer>
     </div>
 </template>
@@ -34,6 +36,9 @@ import CinemaPart from '@/components/CinemaPart';
 </script>
 
 <style scoped>
+.middle{
+    margin-top: 95px;
+}
 #content .cinema-menu{
     width: 100%;
     height: 45px;

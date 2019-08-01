@@ -17,7 +17,9 @@
             </div>
         </div>
         <keep-alive>
-            <router-view/>
+            <div id='middle'>
+                <router-view/>
+            </div>
         </keep-alive>
         <Footer></Footer>
     </div>
@@ -36,6 +38,10 @@ import Footer from '@/components/Footer';
 </script>
 
 <style scoped>
+#middle{
+    margin-top: 95px;
+    margin-bottom: 50px;
+}
 #content .movie-menu{
     width: 100%;
     height: 45px;

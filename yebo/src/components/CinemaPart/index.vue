@@ -1,21 +1,23 @@
 <template>
     <div class='cinema-content'>
-        <ul>
-            <li v-for='item in cinemaList' :key='item.id'>
-                <div>
-                    <span>{{item.nm}}</span>
-                    <span class='q'><span class='price'>{{item.sellPrice}}</span>元起</span>
-                </div>
-                <div class="address">
-                    <span>{{item.addr}}</span>
-                    <span>{{item.distance}}</span>
-                </div>
-                <div class="card">
-                    <div class='one'>退</div>
-                    <div class='two'>折扣卡</div>
-                </div>
-            </li>
-        </ul>
+        <Scroll>
+            <ul>
+                <li v-for='item in cinemaList' :key='item.id'>
+                    <div>
+                        <span>{{item.nm}}</span>
+                        <span class='q'><span class='price'>{{item.sellPrice}}</span>元起</span>
+                    </div>
+                    <div class="address">
+                        <span>{{item.addr}}</span>
+                        <span>{{item.distance}}</span>
+                    </div>
+                    <div class="card">
+                        <div class='one'>退</div>
+                        <div class='two'>折扣卡</div>
+                    </div>
+                </li>
+            </ul>
+        </Scroll>
     </div>
 </template>
 
@@ -43,7 +45,8 @@
 .cinema-content{
     flex: 1;
     overflow: auto;
-    margin-top: 95px;
+    /* margin-top: 95px; */
+    height: 555px;
 }
 .cinema-content ul{
     padding: 20px;

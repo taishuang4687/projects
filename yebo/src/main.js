@@ -11,7 +11,9 @@ Vue.prototype.axios = axios
 Vue.config.productionTip = false
 Vue.filter('setWH',(url,arg)=>{
   return url.replace(/w\.h/,arg);
-})
+});
+import Scroll from '@/components/Scroll';
+Vue.component('Scroll',Scroll);
 
 new Vue({
   router,
