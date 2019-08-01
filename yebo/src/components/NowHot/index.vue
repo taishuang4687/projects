@@ -1,155 +1,15 @@
 <template>
     <div class='movie-content'>
         <ul>
-            <li>
+            <li v-for='item in movieList' :key='item.id'>
                 <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                    <img :src="item.img | setWH('64.90')" alt="">
                 </div>
                 <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
-                </div>
-                <div class="buy-ticket">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="img-show">
-                    <img src="../../../public/imgs/ktv_music.jpg" alt="">
-                </div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>评分:<span class='grade'>9.0</span></p>
-                    <p>主演：陈建兵</p>
-                    <p>共放映600场</p>
+                    <h2>{{item.nm}}</h2>
+                    <p>评分:<span class='grade'>{{item.sc}}</span></p>
+                    <p>主演：{{item.star}}</p>
+                    <p>{{item.showInfo}}</p>
                 </div>
                 <div class="buy-ticket">
                     购票
@@ -161,7 +21,20 @@
 
 <script>
     export default {
-        name:'NowHot'
+        data(){
+            return {
+                movieList : []
+            }
+        },
+        name:'NowHot',
+        mounted(){
+            this.axios.get('/api/movieOnInfoList?city=10').then((res)=>{
+                var msg = res.data.msg;
+                if(msg==='ok'){
+                    this.movieList = res.data.data.movieList;
+                }
+            });
+        }
     }
 </script>
 
