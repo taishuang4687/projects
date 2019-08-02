@@ -4,7 +4,7 @@
         <div id="content">
             <div class="movie-menu">
                 <router-link tag='div' to='/movie/city' class="city-name">
-                    <span>北京</span>
+                    <span>{{$store.state.city.nm}}</span>
                     <i class='iconfont icon-icon_sanjiaoxing'></i>
                 </router-link>
                 <div class="hot-list">
