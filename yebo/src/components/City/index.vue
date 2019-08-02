@@ -73,7 +73,7 @@ export default {
       this.$store.commit('city/CITY_INFO',{nm,id});
       window.localStorage.setItem('nowNm',nm);
       window.localStorage.setItem('nowId',id);
-      this.$router.push('/movie/nowHot');//跳转到最初页面
+      this.$router.push('/movie/nowhot');//跳转到最初页面
     },
     //点击跳转到相同值方法
     clickIndex(index) {
