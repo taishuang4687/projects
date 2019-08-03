@@ -3,36 +3,35 @@
         <Header title='影片详情'>
             <i class="iconfont icon-sousuo" @touchstart='clickToBack'></i>
         </Header>
-        <div id="content" class='contentDetail'>
+        <Loading v-if='isLoading'/>
+        <div v-else id="content" class='contentDetail'>
             <div class="detail_list">
                 <div class="detail_list_bg"></div>
                 <div class="detail_list_filer"></div>
                 <div class="detail_list_content">
                     <div class="detail_list_img">
-                        <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                        <img :src="detailMovie.img | setWH(148.208)" alt="">
                     </div>
                     <div class="detail_list_info">
-                        <h2>无名之辈</h2>
-                        <p>a cool man</p>
-                        <p>9.0</p>
-                        <p>喜剧</p>
-                        <p>中国大陆105分钟</p>
-                        <p>2019-01-01大陆上映</p>
+                        <h2>{{detailMovie.nm}}</h2>
+                        <p>{{detailMovie.enm}}</p>
+                        <p>{{detailMovie.sc}}</p>
+                        <p>{{detailMovie.cat}}</p>
+                        <p>{{detailMovie.src}}/{{detailMovie.dur}}</p>
+                        <p>{{detailMovie.pubDesc}}</p>
                     </div>
                 </div>
             </div>
             <div class='introduce'>
             <div class="detail_intro">
-                <p>我是一个粉刷匠，粉刷本领强，哈哈哈哈哈太熟那个，东方路金波刚打开了就不行咯奇偶进口货vlozio</p>
+                <p>{{detailMovie.dra}}</p>
             </div>
-            <div class="detail_player swiper-container">
+            <div class="detail_player swiper-container" ref='detail_player'>
                 <ul class='swiper-wrapper'>
-                    <li class='swiper_slide'>
+                    <li v-for='(item,index) in detailMovie.photos' :key='index' class='swiper-slide'>
                         <div>
-                            <img src="../../../public/imgs/ktv_music.jpg" alt="">
+                            <img :src="item | setWH(148.208)" alt="">
                         </div>
-                        <p>陈建斌</p>
-                        <p>马先勇</p>
                     </li>
                 </ul>
             </div>
@@ -45,13 +44,34 @@
 import Header from '@/components/Header';
     export default {
         name:'detail',
+        data(){
+            return{
+                detailMovie:{},
+                isLoading:true
+            }
+        },
         props:['movieId'],
         methods:{
             clickToBack(){
                 this.$router.back();
             }
         },
-
+        mounted(){
+            this.axios.get('/api/detailMovie?movieId='+this.movieId).then((res)=>{
+                var msg = res.data.msg;
+                if(msg==='ok'){
+                    this.detailMovie = res.data.data.detailMovie;
+                    this.isLoading = false;
+                    this.$nextTick(()=>{
+                        new Swiper(this.$refs.detail_player,{
+                            slidesPreView:'auto',
+                            freeMode:true,
+                            freeModeSticky:true
+                        });
+                    });
+                }
+            })
+        },
         components:{
             Header
         }
@@ -134,14 +154,12 @@ import Header from '@/components/Header';
 .detail_player .swiper-slide{
     width: 70px;
     margin-right: 20px;
-    text-align: center;
-    font-size: 14px;
+    /* text-align: center;
+    font-size: 14px; */
 }
 .detail_player .swiper-slide img{
     width: 100%;
+    height: 150px;
     margin-bottom: 5px;
-}
-.detail_player .swiper-slide p:nth-of-type(2){
-    color: #999;
 }
 </style>
