@@ -5,11 +5,11 @@
       <ul>
         <li class="pull">{{pullMsg}}</li>
         <li v-for="item in movieList" :key="item.id">
-          <div class="img-show" @tap="toDetail">
+          <div class="img-show" @tap="toDetail(item.id)">
             <img :src="item.img | setWH('64.90')" alt />
           </div>
           <div class="info-list">
-            <h2>{{item.nm}}</h2>
+            <h2 @tap="toDetail(item.id)">{{item.nm}}</h2>
             <p>
               评分:
               <span class="grade">{{item.sc}}</span>
@@ -35,8 +35,10 @@ export default {
     };
   },
   methods: {
-    toDetail() {
-      console.log(1111);
+    //跳转到详情页
+    toDetail(movieId) {
+      console.log(movieId);
+      this.$router.push('/movie/detail/1/'+movieId);
     },
     toScroll(pos) {
       if (pos.y > 30) {

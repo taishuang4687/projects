@@ -4,11 +4,11 @@
     <ul v-else>
       <li class="pull">{{pullMsg}}</li>
       <li v-for="item in comingList" :key="item.id">
-        <div class="img-show">
+        <div class="img-show" @tap='toDetail(item.id)'>
           <img :src="item.img | setWH('64.90')" alt />
         </div>
         <div class="info-list">
-          <h2>{{item.nm}}</h2>
+          <h2 @tap='toDetail(item.id)'>{{item.nm}}</h2>
           <p>
             评分:
             <span class="grade">{{item.sc}}</span>
@@ -31,6 +31,12 @@ export default {
       pullMsg: "",
       isLoading: true
     };
+  },
+  methods:{
+    toDetail(movieId) {
+      console.log(movieId);
+      this.$router.push('/movie/detail/2/'+movieId);
+    }
   },
   name: "ComingSoon",
   mounted() {

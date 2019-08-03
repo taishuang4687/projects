@@ -1,6 +1,6 @@
 <template>
         <div id="header">
-            <p>{{title}}</p>
+            <slot></slot><p>{{title}}</p>
         </div>
 </template>
 
@@ -29,5 +29,9 @@
 }
 #header p{
     font-size: 18px;
+}
+#header i{
+    position: absolute;
+    left: 10px;
 }
 </style>

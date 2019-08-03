@@ -22,6 +22,7 @@
       </div>
     </keep-alive>
     <Footer></Footer>
+    <router-view name='detail' />
   </div>
 </template>
 
