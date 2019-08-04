@@ -43,7 +43,7 @@
 .login-content .login-btn input{
     width: 100%;
     height: 100%;
-    background: #e54847;
+    background: #ff0036;
     border-radius: 5px;
     border: none;
     display: block;
@@ -57,6 +57,6 @@
     text-decoration: none;
     margin:0 5px;
     font-size: 12px;
-    color: #e54847;
+    color: #ff0036;
 }
 </style>

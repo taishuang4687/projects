@@ -4,13 +4,13 @@
          <div id="content">
              <div class="cinema-menu">
                  <div class="city-part">
-                     全城 <i class='iconfont icon-sousuo'></i>
+                     全城 <i class='iconfont icon-icon_sanjiaoxing'></i>
                  </div>
                  <div class="brand-part">
-                     品牌 <i class='iconfont icon-sousuo'></i>
+                     品牌 <i class='iconfont icon-icon_sanjiaoxing'></i>
                  </div>
                  <div class="feature-part">
-                     特色 <i class='iconfont icon-sousuo'></i>
+                     特色 <i class='iconfont icon-icon_sanjiaoxing'></i>
                  </div>
              </div>
          </div>
@@ -40,6 +40,7 @@ import CinemaPart from '@/components/CinemaPart';
     margin-top: 95px;
 }
 #content .cinema-menu{
+    color: #999;
     width: 100%;
     height: 45px;
     line-height: 45px;

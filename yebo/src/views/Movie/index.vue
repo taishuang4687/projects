@@ -70,7 +70,6 @@ export default {
 <style scoped>
 #middle {
   margin-top: 95px;
-  margin-bottom: 50px;
 }
 #content .movie-menu {
   width: 100%;

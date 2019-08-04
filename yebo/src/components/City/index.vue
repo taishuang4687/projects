@@ -21,6 +21,7 @@
         </div>
       </Scroll>
     </div>
+    <Scroll>
     <div class="city-index">
       <ul>
         <li
@@ -30,7 +31,9 @@
         >{{item.index}}</li>
       </ul>
     </div>
+    </Scroll>
   </div>
+    
 </template>
 
 <script>
@@ -51,11 +54,17 @@ export default {
       this.hotList = JSON.parse(hotList);
       this.isLoading = false;
     }
-    this.axios.get("/api/cityList").then(res => {
+    this.axios.get("/api/cityList").then((res) => {
       //判断数据是否返回成功
-      // console.log(res);
       var msg = res.data.msg;
       if (msg === "ok") {
+        this.$nextTick(()=>{
+                        new Swiper(this.$refs.introduce,{
+                            slidesPreView:'auto',
+                            freeMode:true,
+                            freeModeSticky:true
+                        });
+                    });
         var cities = res.data.data.cities;
         this.isLoading = false;
         var { cityList, hotList } = this.formatCitiList(cities); //解构出来

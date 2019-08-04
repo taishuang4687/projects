@@ -1,12 +1,12 @@
 <template>
     <div id='container'>
         <Header title='影片详情'>
-            <i class="iconfont icon-sousuo" @touchstart='clickToBack'></i>
+            <i class="iconfont icon-fanhui" @touchstart='clickToBack'></i>
         </Header>
         <Loading v-if='isLoading'/>
         <div v-else id="content" class='contentDetail'>
             <div class="detail_list">
-                <div class="detail_list_bg"></div>
+                <div class="detail_list_bg" :style="{'background-image':'url('+detailMovie.img.replace(/w\.h/,'148.208')+')'  }"></div>
                 <div class="detail_list_filer"></div>
                 <div class="detail_list_content">
                     <div class="detail_list_img">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class='introduce'>
+            <div class='introduce' ref='introduce'>
             <div class="detail_intro">
                 <p>{{detailMovie.dra}}</p>
             </div>
@@ -69,6 +69,13 @@ import Header from '@/components/Header';
                             freeModeSticky:true
                         });
                     });
+                    this.$nextTick(()=>{
+                        new Swiper(this.$refs.introduce,{
+                            slidesPreView:'auto',
+                            freeMode:true,
+                            freeModeSticky:true
+                        });
+                    });
                 }
             })
         },
@@ -97,7 +104,7 @@ import Header from '@/components/Header';
 .detail_list .detail_list_bg{
     width: 100%;
     height: 100%;
-    background: url(../../../public/imgs/ktv_music.jpg) 0 40%;
+    background:  0 40%;
     filter: blur(20px);
 }
 .detail_list .detail_list_filter{
@@ -109,7 +116,6 @@ import Header from '@/components/Header';
 }
 .introduce{
     height: 450px;
-    overflow: scroll;
 }
 .detail_list .detail_list_content{
     display: flex;
@@ -143,7 +149,7 @@ import Header from '@/components/Header';
     color: #fff;
     line-height: 20px;
     font-size: 14px;
-    color: #999;
+    color: #ffffee;
 }
 .detail_intro{
     padding: 10px;

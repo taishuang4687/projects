@@ -115,7 +115,7 @@ export default {
 .movie_content .info-list p {
   width: 200px;
   font-size: 13px;
-  color: #ccc;
+  color: #666;
   line-height: 22px;
   overflow: hidden;
   white-space: nowrap;
