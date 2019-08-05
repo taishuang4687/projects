@@ -20,7 +20,7 @@
     width: 100%;
     height: 50px;
     color: #fff;
-    background: #ff0036;
+    background: #ff6761;
     line-height: 50px;
     text-align: center;
     position: fixed;

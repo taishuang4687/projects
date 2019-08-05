@@ -40,10 +40,10 @@
     flex: 1;
 }
 #footer li.active{
-    color: #ff0036;
+    color: #ff6761;
 }
 #footer li.router-link-active{
-    color: #ff0036;
+    color: #ff6761;
 }
 #footer i{
     font-size: 18px;

@@ -135,9 +135,10 @@ export default {
 .movie_content .buy-ticket {
   width: 45px;
   height: 25px;
-  line-height: 15px;
+  line-height: 25px;
   text-align: center;
   background-color: antiquewhite;
+  border-radius: 5px;
 }
 .movie_content .pull {
   padding: 0;

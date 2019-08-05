@@ -3,8 +3,8 @@
         <h2>{{title}}</h2>
         <p>{{content}}</p>
         <div>
-            <div @touchstart='handleCancle'>{{cancle}}</div>
-            <div @touchstart='handleOk'>{{ok}}</div>
+            <div v-if='cancle' @touchstart='handleCancle'>{{cancle}}</div>
+            <div v-if='ok' @touchstart='handleOk'>{{ok}}</div>
         </div>
     </div>
 </template>
@@ -25,10 +25,9 @@
     box-shadow: 3px 3px 3px 3px #cccccc;
     position: absolute;
     left: 50%;
-    right: 50%;
-    margin-top: -400px;
-    margin-left: -100px;
-    z-index: 1;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
 }
 .box h2{
     text-align: center;

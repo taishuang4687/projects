@@ -89,18 +89,18 @@ export default {
   margin-left: 20px;
 }
 #content .city-name.active {
-  color: #ff0036;
+  color: #ff6761;
 }
 #content .city-name.router-link-active {
-  color: #ff0036;
+  color: #ff6761;
 }
 #content .hot-list.active {
-  color: #ff0036;
-  border-bottom: 2px solid #ff0036;
+  color: #ff6761;
+  border-bottom: 2px solid #ff6761;
 }
 #content .hot-list.router-link-active {
-  color: #ff0036;
-  border-bottom: 2px solid #ff0036;
+  color: #ff6761;
+  border-bottom: 2px solid #ff6761;
 }
 #content .hot-list {
   display: flex;
@@ -113,12 +113,12 @@ export default {
   margin: 0 12px;
 }
 #content .hot-content.active {
-  color: #ff0036;
-  border-bottom: 2px solid #ff0036;
+  color: #ff6761;
+  border-bottom: 2px solid #ff6761;
 }
 #content .hot-content.router-link-active {
-  color: #ff0036;
-  border-bottom: 2px solid #ff0036;
+  color: #ff6761;
+  border-bottom: 2px solid #ff6761;
 }
 #content .search {
   height: 100%;
@@ -126,6 +126,6 @@ export default {
 }
 #content .search i {
   font-size: 24px;
-  color: #ff0036;
+  color: #ff6761;
 }
 </style>

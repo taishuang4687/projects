@@ -1,4 +1,20 @@
 export default {
     path:'/mine',
-    component:()=>import('@/views/Mine')
+    component:()=>import('@/views/Mine'),
+    children:[{
+        path:'wode',
+        component:()=>import('@/views/Mine/wode.vue')
+    },{
+        path:'login',
+        component:()=>import('@/components/Login')
+    },{
+        path:'register',
+        component:()=>import('@/components/Register')
+    },{
+        path:'findpassword',
+        component:()=>import('@/components/FindPassword')
+    },{
+        path:'/mine',
+        redirect:'wode'
+    }]
 }

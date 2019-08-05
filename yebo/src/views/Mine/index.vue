@@ -2,7 +2,7 @@
     <div>
         <Header title='个人中心'></Header>
         <div id="content">
-            <Login></Login>
+            <router-view></router-view>
         </div>
         <Footer></Footer>
     </div> 
