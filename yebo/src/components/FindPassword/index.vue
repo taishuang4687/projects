@@ -1,7 +1,19 @@
 <template>
+<div>
     <div>
         修改密码
     </div>
+    <div>
+        修改密码
+    </div>
+    <div>
+        修改密码
+    </div>
+    <div>
+        修改密码
+    </div>
+</div>
+    
 </template>
 
 <script>
