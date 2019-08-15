@@ -2,12 +2,13 @@
     <div id="sideBar">
         <div class="logo"></div>
         <div class="user">
-            <div class="login">
-                <div><a href="#">登录</a></div>
-                <div><a href="#">注册</a></div>
+            <div class="login" v-show="!loginMes.isLogin">
+                <div><router-link to="/login">登录</router-link></div>
+                <div><router-link to="/register">注册</router-link></div>
             </div>
-            <div class="logined" style="display:none;">
-                <span>kaivon</span>
+            <div class="logined" v-show="loginMes.isLogin">
+                <span>{{loginMes.userName}}</span>
+				<span><router-link to="/login">[退出]</router-link></span>
             </div>
         </div>
         
@@ -33,13 +34,31 @@
 </template>
 
 <script>
-	/* export default {
-		data(){
-			return {
-				homeLink:'/home'
+	export default {
+		computed:{
+			loginMes(){
+				return this.$store.getters.getLogin;
 			}
-		}
-	} */
+		},
+		created() {
+			//一上来的时候先要去获取本地存储，并且发送到store.js里
+			const user=localStorage.getItem('loginMessage');	//{"userName":"kaivon","isLogin":true}
+			
+			//如果用户是第一次打开这个项目，并没有登录过，那user的值就为null
+			let userMessage={	//如果用户没有登录过，就发送一个空的
+				userName:'',
+				isLogin:false,
+			}
+
+			if(user){
+				userMessage=JSON.parse(user);
+			}
+
+			this.$store.commit('storageUser',userMessage);
+
+			console.log(user);
+		},
+	}
 </script>
 
 <style>
@@ -99,6 +118,20 @@
 	font-size: 24px;
 	vertical-align: middle;
 	padding-left: 30px;
+}
+.logind span{
+	vertical-align: middle;
+}
+.logined span:nth-child(2){
+	float: right;
+	font-size: 16px;
+	line-height: 50px;
+}
+.logined span:nth-child(2) a{
+	color: #cc900c;
+}
+.logined span:nth-child(2) a:hover{
+	text-decoration: underline;
 }
 .logined::before{
 	content: '';

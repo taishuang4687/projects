@@ -17,6 +17,12 @@
                 //this.$router.push('/order');
                 this.$router.push({name:'dishesLink'});
             }
+        },
+        mounted(){
+            this.$axios.get(' https://order-db2d9.firebaseio.com/dish').then((res)=>{
+                
+                console.log(res);
+            })
         }
     }
 </script>

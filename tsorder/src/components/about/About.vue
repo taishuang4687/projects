@@ -16,7 +16,7 @@
 
 </script>
 
-<style>
+<style scoped>
 	.conNav ul{
 		height: 120px;
 		line-height: 120px;
